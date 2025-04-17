@@ -2,13 +2,13 @@
 #include <fstream>
 #include <string>
 #include <tchar.h>
-//Prototipos da função
+//Prototipos da funÃ§Ã£o
 void abrir();
 void novo();
 
 int main()
 {	
-	//Definindo a saída em português
+	//Definindo a saÃ­da em portuguÃªs
 	_tsetlocale(LC_ALL, _T("portuguese"));
 	std::string decisao;
 
@@ -20,8 +20,8 @@ int main()
 		std::cout << "1 - Abrir arquivo\t2 -Criar Arquivo\t3-Sair\n";
 		std::cin >> decisao;
 		int decisao_int = stoi(decisao); // converte string para inteiro
-		system("cls"); // Limpando a saída
-		//manipulando dados recebido pelo usuário
+		system("cls"); // Limpando a saÃ­da
+		//manipulando dados recebido pelo usuÃ¡rio
 		switch (decisao_int)
 		{
 		case 1:
@@ -34,14 +34,17 @@ int main()
 			std::cout << "Saindo do programa...\n";
 			break;
 		default:
-			std::cout << "Opção inválida! Tente novamente.\n";
+			std::cout << "OpÃ§Ã£o invÃ¡lida! Tente novamente.\n";
 			break;
 		}
 
 	} while (!3);
 
+	system("PAUSE");
+	return 0;
+
 }
-//Função Para criar novo arquivo
+//FunÃ§Ã£o Para criar novo arquivo
 void novo()
 {
 	std::ofstream arquivo("arquivo.txt");
@@ -70,12 +73,14 @@ void novo()
 	}
 	arquivo.close();
 }
-//Função para abrir um arquivo
+//FunÃ§Ã£o para abrir um arquivo
 void abrir()
 {
 	std::cout << "\t\tABRINDO DADOS\n";
 	std::cout << "======================================================= \n";
-	std::ifstream arquivo("arquivo.txt");
+	std::ifstream arquivo;
+	arquivo.open("arquivo.txt");
+	//verificando se o arquivo foi aberto corretamente
 	if (!arquivo.is_open())
 	{
 		std::cout << "Erro ao abrir o arquivo.\n";
@@ -84,12 +89,12 @@ void abrir()
 	else
 	{
 		std::string linha;
-		std::cout << "\n\tConteúdo do arquivo:\n";
+		std::cout << "\n\tConteÃºdo do arquivo:\n";
 		std::cout << "======================================================= \n";
 		while (std::getline(arquivo, linha))
 		{
 			std::cout << linha << std::endl;
 		}
 	}
-	
+	arquivo.close();
 }
