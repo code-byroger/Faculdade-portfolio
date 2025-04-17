@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="arquivo_txt.cpp" />
     <ClCompile Include="Funcoes.cpp" />
     <ClCompile Include="vetorPonteiro.cpp" />
   </ItemGroup>

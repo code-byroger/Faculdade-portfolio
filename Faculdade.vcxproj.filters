@@ -21,5 +21,8 @@
     <ClCompile Include="Funcoes.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="arquivo_txt.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
